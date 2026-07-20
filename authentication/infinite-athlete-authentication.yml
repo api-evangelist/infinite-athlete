@@ -1,0 +1,66 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.tempus-ex.com/fusionfeed/authentication
+api: FusionFeed
+summary:
+  types: [apiKey, http, oauth2, openIdConnect]
+  api_key_in: [header]
+  api_key_header: Authorization
+  api_key_scheme: token
+  http_bearer: true
+  oauth2_flows: [authorizationCode]
+  identity_providers: [okta, cognito, custom]
+  note: >-
+    FusionFeed is a resource server. JWTs are not issued by FusionFeed itself; it
+    validates bearer tokens minted by an external identity provider (Okta, Amazon
+    Cognito, or a custom JWT server with embedded access-control policies).
+schemes:
+- name: ApiKeyToken
+  type: apiKey
+  in: header
+  header: Authorization
+  format: 'Authorization: token MY_API_KEY_TOKEN'
+  description: >-
+    Long-lived FusionFeed API key sent in the Authorization header using the
+    "token" scheme. Issued by FusionFeed to invited clients.
+  source: https://docs.tempus-ex.com/fusionfeed/authentication
+- name: BearerJWT
+  type: http
+  scheme: bearer
+  bearerFormat: JWT
+  format: 'Authorization: Bearer [example key]'
+  description: >-
+    JSON Web Token presented as an RFC 6750 bearer token. FusionFeed validates the
+    JWT; tokens are minted by an external identity provider, not by FusionFeed.
+  source: https://docs.tempus-ex.com/fusionfeed/authentication
+- name: OktaOAuth2
+  type: oauth2
+  provider: okta
+  flow: authorizationCode
+  pkce: true
+  issuer: https://tempus-ex.okta.com
+  authorizationUrl: https://tempus-ex.okta.com/oauth2/v1/authorize
+  tokenUrl: https://tempus-ex.okta.com/oauth2/v1/token
+  scopes_requested: [openid, profile, email]
+  description: >-
+    OAuth2 Authorization Code flow with PKCE via Tempus Ex's Okta tenant. Requires
+    a client ID and redirect URI. The resulting ID/access token is presented to
+    FusionFeed as a bearer JWT.
+  source: https://docs.tempus-ex.com/fusionfeed/authentication
+- name: CognitoOAuth2
+  type: oauth2
+  provider: cognito
+  flow: USER_PASSWORD_AUTH
+  description: >-
+    Amazon Cognito as an alternative identity provider using the USER_PASSWORD_AUTH
+    flow (client ID + username + password, e.g. via the AWS CLI
+    cognito-idp initiate-auth). The returned JWT is presented to FusionFeed as a
+    bearer token.
+  source: https://docs.tempus-ex.com/fusionfeed/authentication
+- name: CustomJWT
+  type: openIdConnect
+  provider: custom
+  description: >-
+    Organizations may run their own JWT server and embed access-control policies in
+    tokens for their users; FusionFeed validates these as bearer JWTs.
+  source: https://docs.tempus-ex.com/fusionfeed/authentication
