@@ -1,0 +1,48 @@
+generated: '2026-07-19'
+method: searched
+api: FusionFeed
+note: >-
+  The FusionFeed API host (feed.fusion.tempus-ex.com) and the Infinite Athlete
+  website (infiniteathlete.ai) return an SPA/HTML catch-all (HTTP 200, identical
+  bodies) for every /.well-known/* and /llms.txt path probed, so none of those are
+  genuine discovery documents and none were saved. The one real, provider-relevant
+  discovery document is the OIDC configuration of the Okta identity provider that
+  FusionFeed's documented OAuth2 flow uses.
+hosts:
+- host: https://tempus-ex.okta.com
+  role: identity-provider (FusionFeed OAuth2/OIDC)
+  documents:
+  - path: /.well-known/openid-configuration
+    status: 200
+    file: infinite-athlete-okta-openid-configuration.json
+    note: Genuine OpenID Connect discovery document (issuer https://tempus-ex.okta.com).
+- host: https://feed.fusion.tempus-ex.com
+  role: api
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    genuine: false
+    note: SPA HTML catch-all (text/html), not a real security.txt.
+  - path: /.well-known/openid-configuration
+    status: 200
+    genuine: false
+    note: SPA HTML catch-all, not a real OIDC document.
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    genuine: false
+  - path: /.well-known/api-catalog
+    status: 200
+    genuine: false
+  - path: /.well-known/ai-plugin.json
+    status: 200
+    genuine: false
+  - path: /llms.txt
+    status: 200
+    genuine: false
+- host: https://docs.tempus-ex.com
+  role: docs
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /llms.txt
+    status: 404

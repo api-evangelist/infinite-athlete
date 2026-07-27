@@ -1,0 +1,55 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.tempus-ex.com/fusionfeed
+api: FusionFeed
+summary: >-
+  Cross-cutting request/response semantics for the FusionFeed sports data API,
+  captured from the Tempus Ex documentation. FusionFeed is offered over REST,
+  GraphQL, and the proprietary FusionFeed Query Language (FQL).
+authentication:
+  style: bearer-or-apikey
+  header: Authorization
+  schemes: [token, Bearer]
+  detail: authentication/infinite-athlete-authentication.yml
+paradigms:
+  - rest
+  - graphql
+  - fql   # FusionFeed Query Language (proprietary)
+base_url: https://feed.fusion.tempus-ex.com/v2/
+versioning:
+  style: uri-path
+  current: v2
+  location: path segment (/v2/)
+  source: https://docs.tempus-ex.com/fusionfeed
+rate_limiting:
+  signaled: true
+  consumption_header: txm-limit-consumption
+  http_status_on_exceed: 429
+  graphql_behavior: returns GraphQL errors when limits are exceeded
+  guidance: clients should implement exponential backoff on rate errors
+  numeric_limits_published: false
+  quota_increase_contact: support@tempus-ex.com
+  source: https://docs.tempus-ex.com/fusionfeed/limits
+  detail: https://docs.tempus-ex.com/fusionfeed/limits
+idempotency:
+  documented: false
+  note: >-
+    No idempotency-key mechanism is documented in the public FusionFeed docs. The
+    API is read-oriented (schedules, rosters, stats, telemetry, video), so no
+    Idempotency pointer is emitted.
+error_handling:
+  http: standard HTTP status codes; 429 for rate limits
+  graphql: errors returned in the GraphQL errors[] envelope
+  guidance: exponential backoff on rate/transient errors
+data_domains:
+  - schedules
+  - rosters
+  - official-stats
+  - automated-stats
+  - telemetry
+  - video-feeds
+  - virtual-camera
+cross_links:
+  authentication: authentication/infinite-athlete-authentication.yml
+  lifecycle: lifecycle/infinite-athlete-lifecycle.yml
+  conformance: conformance/infinite-athlete-conformance.yml

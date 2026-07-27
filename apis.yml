@@ -1,7 +1,33 @@
 aid: infinite-athlete
 name: Infinite Athlete
-description: Infinite Athlete is a company surfaced as a portfolio company of a16z and added to the API
-  Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Infinite Athlete is a sports technology company that brings together leading
+  companies in performance biomechanics and real-time video to deliver
+  data-driven, actionable insights for elite athlete evaluation, development,
+  health, and safety. Its work spans athlete performance frameworks, biomechanics
+  research and development, a real-time video and data capture technology
+  platform, facility design and hardware installation, sports operational
+  efficiency, and equipment/facility/surface analysis and certification for major
+  leagues and teams. Its developer-facing product is FusionFeed, a sports and
+  performance data API (REST, GraphQL, and the proprietary FQL query language)
+  built on the Tempus Ex platform that exposes schedules, rosters, official and
+  automated statistics, telemetry, video feeds, and virtual camera data. The
+  developer platform is currently invite-only. Infinite Athlete is backed by a16z
+  and has been recognized among the "10 Most Innovative Sports Tech Companies" by
+  Sports Business Journal.
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://static.infiniteathlete.ai/logo_icon_dark_705bc0c5c9.svg
 url: https://raw.githubusercontent.com/api-evangelist/infinite-athlete/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -11,12 +37,92 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-19'
 tags:
 - Company
-apis: []
+- Sports
+- Sports Technology
+- Sports Data
+- Athlete Performance
+- Biomechanics
+- Video
+- Real-Time Data
+- Analytics
+- GraphQL
+apis:
+- name: FusionFeed
+  description: >-
+    FusionFeed is Infinite Athlete's sports and performance data API, built on the
+    Tempus Ex platform. It provides schedules, team rosters on a game-by-game
+    basis, official stats delivered the moment the stats crew submits them,
+    automated statistics, telemetry, video feeds, and virtual camera data. The API
+    is accessible over REST, GraphQL, and the proprietary FusionFeed Query Language
+    (FQL). Access is invite-only; authentication supports long-lived API keys, JWT
+    bearer tokens, and OAuth2 via Okta or Amazon Cognito identity providers.
+  humanURL: https://docs.tempus-ex.com/fusionfeed
+  baseURL: https://feed.fusion.tempus-ex.com/v2/
+  tags:
+  - Sports Data
+  - GraphQL
+  - REST
+  - Video
+  - Telemetry
+  properties:
+  - type: Documentation
+    url: https://docs.tempus-ex.com/fusionfeed
+  - type: APIReference
+    url: https://docs.tempus-ex.com/fusionfeed/rest/explorer-and-reference
+  - type: GraphQL
+    url: https://docs.tempus-ex.com/fusionfeed/graphql/explorer-and-reference
+  - type: GettingStarted
+    url: https://docs.tempus-ex.com/fusionfeed
+  - type: Authentication
+    url: https://docs.tempus-ex.com/fusionfeed/authentication
+    x-artifact: authentication/infinite-athlete-authentication.yml
+common:
+- type: DeveloperPortal
+  url: https://infiniteathlete.ai/developers
+- type: Documentation
+  url: https://docs.tempus-ex.com/fusionfeed
+- type: APIReference
+  url: https://docs.tempus-ex.com/fusionfeed/rest/explorer-and-reference
+- type: GettingStarted
+  url: https://docs.tempus-ex.com/fusionfeed
+- type: Authentication
+  url: authentication/infinite-athlete-authentication.yml
+- type: OAuthScopes
+  url: scopes/infinite-athlete-scopes.yml
+- type: Conventions
+  url: conventions/infinite-athlete-conventions.yml
+- type: RateLimits
+  url: https://docs.tempus-ex.com/fusionfeed/limits
+- type: Lifecycle
+  url: lifecycle/infinite-athlete-lifecycle.yml
+- type: Conformance
+  url: conformance/infinite-athlete-conformance.yml
+- type: DomainSecurity
+  url: security/infinite-athlete-domain-security.yml
+- type: WellKnown
+  url: well-known/infinite-athlete-well-known.yml
+- type: LLMsTxt
+  url: llms/infinite-athlete-llms.txt
+- type: GitHubOrganization
+  url: https://github.com/tempus-ex
+- type: Blog
+  url: https://infiniteathlete.ai/blog
+- type: Support
+  url: https://infiniteathlete.ai/contact
+- type: SignUp
+  url: https://infiniteathlete.ai/developers
+- type: PrivacyPolicy
+  url: https://infiniteathlete.ai/privacy
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

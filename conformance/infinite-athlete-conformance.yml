@@ -1,0 +1,33 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.tempus-ex.com/fusionfeed/authentication
+api: FusionFeed
+standards:
+- id: oauth2
+  conforms: true
+  evidence: >-
+    OAuth2 Authorization Code + PKCE via Okta (authorize/token endpoints
+    documented) and Amazon Cognito as identity providers.
+- id: oidc
+  conforms: true
+  evidence: >-
+    OpenID Connect via Okta issuer https://tempus-ex.okta.com; requested scopes
+    include openid profile email; OIDC discovery document published at the Okta
+    tenant.
+- id: rfc6750-bearer
+  conforms: true
+  evidence: 'Accepts JWTs as RFC 6750 bearer tokens: Authorization: Bearer <JWT>.'
+- id: jwt
+  conforms: true
+  evidence: Validates JSON Web Tokens minted by external identity providers.
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: No application/problem+json error format documented (public docs).
+- id: graphql
+  conforms: true
+  evidence: FusionFeed exposes a GraphQL interface (Explorer and Reference).
+- id: rate-limit-429
+  conforms: true
+  evidence: >-
+    HTTP 429 on limit exceed with a txm-limit-consumption response header;
+    GraphQL errors on the GraphQL surface.

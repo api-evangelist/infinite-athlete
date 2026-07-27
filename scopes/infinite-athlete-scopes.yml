@@ -1,0 +1,49 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.tempus-ex.com/fusionfeed/authentication
+docs: https://docs.tempus-ex.com/fusionfeed/authentication
+api: FusionFeed
+note: >-
+  FusionFeed authenticates OAuth2/OIDC bearer tokens issued by an external Okta
+  tenant (https://tempus-ex.okta.com). The scopes below are the OIDC scopes the
+  FusionFeed docs request during the Okta Authorization Code + PKCE flow, plus the
+  additional scopes advertised by the Okta org authorization server discovery
+  document. FusionFeed does not document its own API-resource scope namespace
+  publicly; authorization to specific data is governed by the invited client's
+  access policy embedded in the JWT.
+schemes:
+- name: OktaOAuth2
+  source: https://docs.tempus-ex.com/fusionfeed/authentication
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://tempus-ex.okta.com/oauth2/v1/authorize
+    tokenUrl: https://tempus-ex.okta.com/oauth2/v1/token
+scopes:
+- scope: openid
+  description: OIDC authentication; required for the Authorization Code + PKCE flow.
+  flows: [authorizationCode]
+  sources: [docs, okta-discovery]
+- scope: profile
+  description: Basic profile claims.
+  flows: [authorizationCode]
+  sources: [docs, okta-discovery]
+- scope: email
+  description: Email claim.
+  flows: [authorizationCode]
+  sources: [docs, okta-discovery]
+- scope: address
+  description: Address claim (advertised by the Okta authorization server).
+  flows: [authorizationCode]
+  sources: [okta-discovery]
+- scope: phone
+  description: Phone claim (advertised by the Okta authorization server).
+  flows: [authorizationCode]
+  sources: [okta-discovery]
+- scope: offline_access
+  description: Refresh-token issuance (advertised by the Okta authorization server).
+  flows: [authorizationCode]
+  sources: [okta-discovery]
+- scope: groups
+  description: Group membership claim (advertised by the Okta authorization server).
+  flows: [authorizationCode]
+  sources: [okta-discovery]

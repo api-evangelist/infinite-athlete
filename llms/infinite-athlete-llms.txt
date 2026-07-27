@@ -1,0 +1,31 @@
+# Infinite Athlete
+
+> Infinite Athlete is a sports technology company combining performance biomechanics and real-time video to deliver data-driven insights for elite athlete evaluation, development, health, and safety. Its developer product is FusionFeed, a sports and performance data API (REST, GraphQL, and the proprietary FQL) built on the Tempus Ex platform. The developer platform is invite-only. Backed by a16z.
+
+## APIs
+
+- [FusionFeed documentation](https://docs.tempus-ex.com/fusionfeed): Sports and performance data API — schedules, rosters, official/automated stats, telemetry, video feeds, virtual camera. Base URL https://feed.fusion.tempus-ex.com/v2/
+- [REST Explorer and Reference](https://docs.tempus-ex.com/fusionfeed/rest/explorer-and-reference): REST interface reference.
+- [GraphQL Explorer and Reference](https://docs.tempus-ex.com/fusionfeed/graphql/explorer-and-reference): GraphQL interface reference.
+- [Authentication](https://docs.tempus-ex.com/fusionfeed/authentication): API key (Authorization: token), JWT bearer, and OAuth2 via Okta (Authorization Code + PKCE) or Amazon Cognito.
+- [Limits](https://docs.tempus-ex.com/fusionfeed/limits): Rate limiting signaled via the txm-limit-consumption header; HTTP 429 on exceed; use exponential backoff.
+
+## Docs
+
+- [Developer platform](https://infiniteathlete.ai/developers): Invite-only; request access via the form.
+- [Company](https://infiniteathlete.ai/company): About Infinite Athlete.
+- [Blog](https://infiniteathlete.ai/blog)
+- [Contact](https://infiniteathlete.ai/contact): support@tempus-ex.com — 635 Brannan St, San Francisco, CA 94107.
+- [Privacy Policy](https://infiniteathlete.ai/privacy)
+
+## Repositories
+
+- [Tempus Ex on GitHub](https://github.com/tempus-ex): Public repos are hardware/codec examples and the docs site (no first-party API SDK published).
+
+## API Evangelist artifacts
+
+- [Authentication profile](https://raw.githubusercontent.com/api-evangelist/infinite-athlete/refs/heads/main/authentication/infinite-athlete-authentication.yml)
+- [Conventions](https://raw.githubusercontent.com/api-evangelist/infinite-athlete/refs/heads/main/conventions/infinite-athlete-conventions.yml)
+- [Lifecycle](https://raw.githubusercontent.com/api-evangelist/infinite-athlete/refs/heads/main/lifecycle/infinite-athlete-lifecycle.yml)
+- [Conformance](https://raw.githubusercontent.com/api-evangelist/infinite-athlete/refs/heads/main/conformance/infinite-athlete-conformance.yml)
+- [OAuth scopes](https://raw.githubusercontent.com/api-evangelist/infinite-athlete/refs/heads/main/scopes/infinite-athlete-scopes.yml)

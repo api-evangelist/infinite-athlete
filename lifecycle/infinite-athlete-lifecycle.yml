@@ -1,0 +1,24 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.tempus-ex.com/fusionfeed
+api: FusionFeed
+versioning:
+  scheme: uri-path
+  current: v2
+  docs: https://docs.tempus-ex.com/fusionfeed
+  note: >-
+    The FusionFeed base URL carries the major version in the path
+    (https://feed.fusion.tempus-ex.com/v2/); V2 is the current major version.
+deprecation:
+  policy_url: null
+  sunset_header: false
+  note: No public deprecation policy or RFC 8594 Sunset/Deprecation header support documented.
+sla:
+  url: null
+  uptime_target: null
+  note: No published SLA. Rate-limit / quota increases are handled via support.
+status_page: null
+support:
+  email: support@tempus-ex.com
+  contact: https://infiniteathlete.ai/contact
+access_model: invite-only
