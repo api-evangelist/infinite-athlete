@@ -15,6 +15,17 @@ description: >-
   developer platform is currently invite-only. Infinite Athlete is backed by a16z
   and has been recognized among the "10 Most Innovative Sports Tech Companies" by
   Sports Business Journal.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: self-serve
