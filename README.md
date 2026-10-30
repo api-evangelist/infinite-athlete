@@ -64,6 +64,62 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Infinite Athlete is a company surfaced as a portfolio company of a16z and added to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+Infinite Athlete is a sports technology company that brings together leading companies in performance biomechanics and real-time video to deliver data-driven, actionable insights for elite athlete evaluation, development, health, and safety. Its work spans athlete performance frameworks, biomechanics research and development, a real-time video and data capture technology platform, facility design and hardware installation, sports operational efficiency, and equipment/facility/surface analysis and certification for major leagues and teams. Its developer-facing product is FusionFeed, a sports and performance data API (REST, GraphQL, and the proprietary FQL query language) built on the Tempus Ex platform that exposes schedules, rosters, official and automated statistics, telemetry, video feeds, and virtual camera data. The developer platform is currently invite-only. Infinite Athlete is backed by a16z and has been recognized among the "10 Most Innovative Sports Tech Companies" by Sports Business Journal.
 
-Backed by: a16z
+**Areas:** Company · Sports · Sports Technology · Sports Data · Athlete Performance · Biomechanics · Video · Real-Time Data · Analytics · GraphQL
+
+## Infinite Athlete on APIs.io
+
+Everything profiled for Infinite Athlete is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/infinite-athlete/](https://apis.io/providers/infinite-athlete/)** — or go straight to one of the APIs or properties below.
+
+### APIs (1)
+
+- [FusionFeed](https://apis.io/apis/infinite-athlete/fusionfeed/) — FusionFeed is Infinite Athlete's sports and performance data API, built on the Tempus Ex platform. It provides schedules, team rosters on a game-by-game…
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Infinite Athlete Authentication](https://apis.io/security/infinite-athlete/infinite-athlete-authentication/)
+- [Infinite Athlete Domain Security](https://apis.io/security/infinite-athlete/infinite-athlete-domain-security/)
+
+#### OAuth scopes (1)
+
+The permissions the API asks for.
+
+- [Infinite Athlete Scopes](https://apis.io/scopes/infinite-athlete/infinite-athlete-scopes/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Documentation](https://docs.tempus-ex.com/fusionfeed)
+- [Getting started](https://docs.tempus-ex.com/fusionfeed)
+- [API reference](https://docs.tempus-ex.com/fusionfeed/rest/explorer-and-reference)
+- [Sign up](https://infiniteathlete.ai/developers)
+- [Support](https://infiniteathlete.ai/contact)
+- [Blog](https://infiniteathlete.ai/blog)
+- [Privacy policy](https://infiniteathlete.ai/privacy)
+- [GitHub](https://github.com/tempus-ex)
+
+## API Evangelist rating
+
+**Unrated** — no public website could be reached for this company, so there was almost nothing to measure and nothing a reader could check.
+
+This is not a score of zero. No rating is published for this company. If that is wrong because something public exists that we missed, say so on this repository or email [info@apievangelist.com](mailto:info@apievangelist.com) and it will be re-run — free, and no justification needed.
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Infinite Athlete: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/infinite-athlete/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
